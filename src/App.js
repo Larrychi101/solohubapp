@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+function Header() {
+  return (
+    <header className="App-header">
+      <h1>Welcome to Solohub</h1>
+      <p>
+        An AI-powered marketplace for African talents and intellectual capabilities.
+      </p>
+      <a
+        className="App-link"
+        href="https://www.sologid.com" // replace with actual link
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get Started
+      </a>
+    </header>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
     </div>
   );
 }
