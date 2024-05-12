@@ -17,7 +17,7 @@ function OnboardingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('https://helloworld90a877-solohubapp.azurewebsites.net', {
+    fetch('https://helloworld90a877.azurewebsites.net/api/solohubapp?', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
