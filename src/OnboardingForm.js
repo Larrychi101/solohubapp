@@ -16,7 +16,7 @@ function OnboardingForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     fetch('https://helloworld90a877.azurewebsites.net/api/solohubapp?', {
         method: 'POST',
         headers: {
@@ -31,12 +31,12 @@ function OnboardingForm() {
     .catch((error) => {
         console.error('Error:', error);
     });
-};
+  }; // This is the missing closing brace
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form-content">
-        <h2>Welcome to the onboarding process!</h2>
+        <h2>The onboarding process!</h2>
         <p className="form-description">This form is your first step towards joining our AI-powered marketplace for African talents and intellectual capabilities. Please provide some information about yourself so we can tailor our services to your needs and goals. All fields are required.</p>
         <div className="form-group">
           <label>Full Name:</label>
