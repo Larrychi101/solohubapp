@@ -1,30 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './App.css';
+import OnboardingForm from './OnboardingForm';
 
 function Header() {
+  const [showForm, setShowForm] = useState(false);
+
+  if (showForm) {
+    return <OnboardingForm />;
+  }
+
   return (
     <header className="App-header">
       <h1>Welcome to Solohub</h1>
       <p>
-        An AI-powered marketplace for African talents and intellectual capabilities.
+        The AI-powered marketplace for African talents and intellectual capabilities.
       </p>
-      <a
-        className="App-link"
-        href="https://www.sologid.com" // replace with actual link
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Get Started
-      </a>
+      <div className="App-cta">
+        <Link to="#" className="App-link" onClick={() => setShowForm(true)}>Sign Up</Link>
+        <button
+          className="App-link"
+          onClick={() => window.open("https://techhub.cloudflareaccess.com/cdn-cgi/access/login/techhub.cloudflareaccess.com?redirect_url=%2F&kid=5aebecaae64377eb630fd5924d72119c2f6e7cec28755f0e41325d6519c47546", "_blank")}
+        >
+          Sign In
+        </button>
+      </div>
     </header>
   );
 }
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+      </div>
+    </Router>
   );
 }
 
