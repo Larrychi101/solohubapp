@@ -1,37 +1,57 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .form-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; /* Set a relative width */
+  max-width: 600px; /* Limit the maximum width */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Stack the label and input vertically */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px; /* Add some space between the label and the input */
+  text-align: left; /* Align the text to the left */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Make the input take up the full width */
+}
+
+.form-description {
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Media query for screens larger than 600px */
+@media (min-width: 600px) {
   .form-group {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: row; /* On larger screens, put the label and input side by side */
+    justify-content: space-between; /* Add space between the label and input */
     align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
   }
-  
+
   .form-group label {
     flex-basis: 30%;
-    text-align: right;
-    margin-right: 10px;
+    text-align: right; /* Align the text to the right */
+    margin-right: 10px; /* Add some space between the label and the input */
   }
-  
+
   .form-group input,
   .form-group textarea {
     flex-basis: 60%;
   }
-  
-  .form-description {
-    text-align: center;
-    max-width: 600px;
-    margin-bottom: 20px;
-  }
+}

@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import OnboardingForm from './OnboardingForm';
 
 function Header() {
-  const [showForm, setShowForm] = useState(false);
-
-  if (showForm) {
-    return <OnboardingForm />;
-  }
-
   return (
     <header className="App-header">
       <h1>Welcome to Solohub</h1>
@@ -25,6 +18,7 @@ function Header() {
           Sign In
         </button>
       </div>
+      <Link to="/feedback" className="App-link">Feedback</Link>
     </header>
   );
 }

@@ -1,6 +1,6 @@
 .App-link {
-  font-size: 20px; /* Adjust the size as per your requirement */
-  padding: 10px 20px; /* Increase padding to make buttons larger */
+  font-size: 2vw; /* Use viewport width units for scalable font size */
+  padding: 1vw 2vw; /* Use viewport width units for scalable padding */
   color: #61dafb;
   text-decoration: none;
   border: 1px solid #61dafb;
@@ -26,6 +26,19 @@
 
 .App-cta {
   display: flex;
-  gap: 20px;
+  gap: 2vw; /* Use viewport width units for scalable gap size */
+  flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+  justify-content: center; /* Center items on small screens */
 }
 
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .App-link {
+    font-size: 4vw; /* Increase font size on small screens */
+    padding: 2vw 4vw; /* Increase padding on small screens */
+  }
+
+  .App-cta {
+    gap: 4vw; /* Increase gap size on small screens */
+  }
+}
