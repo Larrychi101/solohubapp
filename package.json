@@ -1,14 +1,39 @@
 {
   "name": "solohubapp",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "start": "func start",
-    "test": "echo \"No tests yet...\""
-  },
+  "private": true,
   "dependencies": {
-    "@azure/functions": "^4.0.0"
+    "azure-functions-core-tools": "^4.0.4",
+    "express": "^4.19.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^4.0.3"
   },
-  "devDependencies": {},
-  "main": "src/functions/*.js"
+  "scripts": {
+    "start": "react-scripts start",
+    "start:host": "func start",
+    "build": "react-scripts build && npm run build:host",
+    "build:host": "func extensions install",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

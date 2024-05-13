@@ -17,7 +17,7 @@ function Header() {
         The AI-powered marketplace for African talents and intellectual capabilities.
       </p>
       <div className="App-cta">
-        <Link to="#" className="App-link" onClick={() => setShowForm(true)}>Sign Up</Link>
+        <a href="http://localhost:8080/onboarding" target="_blank" className="App-link">Sign Up</a>
         <button
           className="App-link"
           onClick={() => window.open("https://techhub.cloudflareaccess.com/cdn-cgi/access/login/techhub.cloudflareaccess.com?redirect_url=%2F&kid=5aebecaae64377eb630fd5924d72119c2f6e7cec28755f0e41325d6519c47546", "_blank")}

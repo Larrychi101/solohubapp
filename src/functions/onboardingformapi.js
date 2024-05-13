@@ -1,4 +1,10 @@
 const { app } = require('@azure/functions');
+const { CosmosClient } = require("@azure/cosmos");
+
+const connectionString = process.env["CosmosDBConnectionString"];
+const client = new CosmosClient(connectionString);
+const database = client.database('solohubonboardingform');
+const container = database.container('solohubapp01');
 
 app.http('onboardingformapi', {
     methods: ['POST'],
@@ -12,8 +18,9 @@ app.http('onboardingformapi', {
         // Log the form data to the console
         context.log('Form data:', formData);
 
-        // Process the form data here, e.g. save it to a database or send an email
+        // Save the form data to Cosmos DB
+        const { resource: createdItem } = await container.items.create(formData);
 
-        return { body: `Form submission received` };
+        return { body: `Form submission received and stored with id: ${createdItem.id}` };
     }
 });
